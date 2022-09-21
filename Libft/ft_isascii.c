@@ -6,9 +6,10 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 19:04:27 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/12 19:13:20 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:32:23 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 int		ft_ascii(int c)
 {
@@ -17,4 +18,3 @@ int		ft_ascii(int c)
 	else
         return (0);
 }
-]

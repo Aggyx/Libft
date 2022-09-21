@@ -6,9 +6,11 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 19:20:51 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/12 19:38:02 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:33:49 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+include <stddef.h>
 
 void    *ft_memset(void *s, int c, size_t n);
 {   
