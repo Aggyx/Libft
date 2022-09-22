@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 19:04:27 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/16 15:32:23 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:32:59 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-int		ft_ascii(int c)
+int	ft_ascii(unsigned char c)
 {
 	if ((c >= 0) && (c <= 127))
-			return (1);
+		return (1);
 	else
-        return (0);
+		return (0);
 }
+

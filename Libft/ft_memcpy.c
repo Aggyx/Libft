@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:29:03 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/16 15:32:38 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/22 12:20:37 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void    *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    char    *dL;
-    const char    *sL;
-    int i;
+	const char	*sl;
+	char		*dl;
+	int			i;
 
-    sL = src;
-    dL = dest;
-    i = 0;
-    if  ((n) && (dest) && (src))
-    {
-        while (n--)
-        {
-            *(dL + i) = *(sL + i);
-            i++;
-        }
-    }
-    return (dest);
+	sl = src;
+	dl = dest;
+	i = 0;
+	if ((n) && (dest) && (src))
+	{
+		while (n--)
+		{
+			*(dl + i) = *(sl + i);
+			i++;
+		}
+	}
+	return (dest);
 }
 
 /*
