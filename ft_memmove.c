@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:54:29 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/23 10:35:14 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:25:29 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,20 @@
 
 void	*ft_memmove(void *dest, void *src, size_t len)
 {
-	size_t	i;
 	char	*d;
 	char	*s;
 
-	i = 0;
 	d = (char *)dest;
 	s = (char *)src;
-	if (d > s)
+	if ((d < s) && len)
 	{
-		while (len-- > 0)
-			d[len] = s[len];
+		ft_memcpy(d, s, len);
 	}
-	else
+	else if ((d > s) && len)
 	{
-		while (i < len)
+		while (len--)
 		{
-			d[i] = s[i];
-			i++;
+			d[len] = s[len];
 		}
 	}
 	return (dest);

@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:29:03 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:20:37 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:00:42 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
+	else
+		return (0);
 	return (dest);
 }
 

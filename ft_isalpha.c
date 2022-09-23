@@ -6,13 +6,13 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:31:30 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/23 00:36:10 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:47:26 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(unsigned char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

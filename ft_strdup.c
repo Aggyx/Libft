@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:54:42 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/23 12:25:05 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:54:01 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,15 @@ char	*ft_strdup(const char *s1)
 	sd[i] = '\0';
 	return (sd);
 }
+/*
+#include<stdio.h>
+int main()
+{
+    char source[] = "hola";
+
+    char* target = ft_strdup(source);
+ 
+    printf("%s", target);
+    return 0;
+}
+*/
