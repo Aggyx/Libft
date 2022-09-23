@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:47:59 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:38:53 by smagniny         ###   ########.fr       */
+/*   Created: 2022/09/23 11:54:42 by smagniny          #+#    #+#             */
+/*   Updated: 2022/09/23 12:25:05 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{	
-	int	i;
+char	*ft_strdup(const char *s1)
+{
+	char	*sd;
+	int		l;
+	int		i;
 
+	l = ft_strlen(s1) + 1;
 	i = 0;
-	if (n)
+	sd = malloc(l * sizeof(char));
+	if (!sd)
+		return (0);
+	while (s1[i])
 	{
-		while (i++ < n)
-		{
-			*(char *)(s + i) = '\0';
-		}
+		sd[i] = s1[i];
+		i++;
 	}
+	sd[i] = '\0';
+	return (sd);
 }

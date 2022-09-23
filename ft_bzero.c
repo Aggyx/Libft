@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:47:59 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:38:53 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 00:50:25 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {	
-	int	i;
-
-	i = 0;
-	if (n)
-	{
-		while (i++ < n)
-		{
-			*(char *)(s + i) = '\0';
-		}
-	}
+	ft_memset(s, 0, n);
 }

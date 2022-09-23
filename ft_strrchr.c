@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:17:09 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 16:53:54 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/22 23:53:59 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == (char)c)
-			ret = &((char*)s)[i];
+			ret = &((char *)s)[i];
 		i++;
 	}
 	if (c == '\0')
-		ret = &((char*)s)[i];
+		ret = &((char *)s)[i];
 	return (ret);
 }
 /*

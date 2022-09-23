@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 14:26:16 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 15:04:46 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 12:21:41 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	unsigned int	i;
+	int				counter;
 
-	i = 0;
-	if (dstsize)
-	{
-		while (i++ < ft_strlen(dst) - 1)
-		{
-			*(dst + i) = *(src + i);
-		}
-		*(dst + i) = '\0';
-	}
-	else
+	if (!src)
 		return (0);
+	counter = (unsigned int)ft_strlen(src);
+	if (!dstsize)
+		return (counter);
+	i = 0;
+	while (src[i] && i < (dstsize - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (counter);
 }

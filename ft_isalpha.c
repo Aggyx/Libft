@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:31:30 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:34:41 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 00:36:10 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(unsigned char c)
 {
-	if ((c >= 65 && c <= 90) && (c >= 97 && c <= 122))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	else
 		return (0);

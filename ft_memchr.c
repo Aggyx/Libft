@@ -3,26 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:47:55 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 16:55:28 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:27:06 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    char    *ptr;
+	unsigned char	*str;
+	size_t			i;
 
-    ptr = (char *)s;
-    while (*ptr != c && n)
-    {
-        if (*ptr == '\0')
-            return (0);
-        ptr++;
-        n--;     
-    }
-    return (ptr);
+	str = (unsigned char *)s;
+	c = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (str[i] == c)
+			return ((void *)str + i);
+		i++;
+	}
+	return (0);
 }
+
+/*
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char tab[] = "aaaaaaaaaa";
+
+    memchr(tab, 'a', 4);
+    puts(tab);
+    return (0);
+}*/

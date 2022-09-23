@@ -6,48 +6,52 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 13:54:29 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:30:29 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:35:14 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memove(void *dest, void *src, size_t len)
+void	*ft_memmove(void *dest, void *src, size_t len)
 {
 	size_t	i;
-	char			*d;
-	char			*s;
+	char	*d;
+	char	*s;
 
 	i = 0;
 	d = (char *)dest;
 	s = (char *)src;
-	if (dest == src)
+	if (d > s)
 	{
-		while ((i++ < len) && (i < ft_strlen(src)))
-			*(d + i) = *(s + i);
+		while (len-- > 0)
+			d[len] = s[len];
 	}
-	i = 0;
-	while ((i++ < len))
-		dest = d + 1;
+	else
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
 	return (dest);
 }
-
 /*
+#include <stdio.h>
 #include <string.h>
 
 int main(void) {
-   	char dest[] = "HH";
-	char src[]  = "KK";
-    char dest1[] = "HH";
-	char src1[]  = "KK";
+   	char dest[] = "H";
+	char src[]  = "kkkkkkk";
+    char dest1[] = "H";
+	char src1[]  = "kkkkkkk";
   	printf("Before memmove dest = %s, src = %s\n", dest, src);
-    ft_memove(dest, src, 3);
+    ft_memmove(dest, src, 2);
    	printf("After memmove dest = %s, src = %s\n", dest, src);
 
     printf("memmove dest = %s, src = %s\n", dest1, src1);
-    memmove(dest1, src1, 3);
+    memmove(dest1, src1, 2);
    	printf("A memmove dest = %s, src = %s\n", dest1, src1);
 
   	return(0);
-}
-*/
+}*/

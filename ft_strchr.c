@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 15:54:27 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 16:23:15 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/22 23:53:17 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    char    *ptr;
+	char	*ptr;
 
-    ptr = (char *)s;
-    while (*ptr != c)
-    {
-        if (*ptr == '\0')
-            return (0);
-        ptr++;            
-    }
-    return (ptr);
+	ptr = (char *)s;
+	while (*ptr != c)
+	{
+		if (*ptr == '\0')
+			return (0);
+		ptr++;
+	}
+	return (ptr);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 19:20:51 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:26:08 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/23 00:51:30 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
-	if (c)
+	if (s)
 	{
 		i = 0;
 		while (i < n)
