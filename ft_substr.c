@@ -1,25 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/24 19:15:15 by smagniny         ###   ########.fr       */
+/*   Created: 2022/09/24 15:37:05 by smagniny          #+#    #+#             */
+/*   Updated: 2022/09/26 12:50:33 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	index;
-
-	index = 0;
-	while (str[index] != '\0' )
+	char	*ptr;
+	int		i;
+	
+	i = 0;
+	if (!s)
+		return (NULL);
+	ptr = (char *)malloc((len + 1) * sizeof(*s));
+	if (!ptr)
+		return (NULL);
+	while (len--)
 	{
-		index++;
+		ptr[i] = s[start];
+		start++;
+		i++;
 	}
-	return (index);
+	ptr[i] = '\0';
+	return (ptr);
 }
+
+/*
+int	main(void)
+{
+	char tab[] = "holacomoestasmanu";
+	char *p;
+
+	p = ft_substr(tab,0,120);
+	printf("%s", p);
+	free(p);
+}*/

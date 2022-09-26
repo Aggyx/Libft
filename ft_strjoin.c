@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 16:29:03 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/25 11:45:25 by smagniny         ###   ########.fr       */
+/*   Created: 2022/09/24 16:48:06 by smagniny          #+#    #+#             */
+/*   Updated: 2022/09/25 12:52:47 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const char	*sl;
-	char		*dl;
-	int			i;
+	char	*new_str;
+	int		i;
+	int		j;
 
-	sl = src;
-	dl = dest;
-	if (!src && !dest)
+	new_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s1 || !s2 || !(new_str))
 		return (0);
 	i = 0;
-	while (n--)
+	while (s1[i] != '\0')
 	{
-		*(dl + i) = *(sl + i);
+		new_str[i] = s1[i];
 		i++;
 	}
-	return (dest);
+	j = 0;
+	while (s2[j] != '\0')
+		new_str[i++] = s2[j++];
+	new_str[i] = '\0';
+	return (new_str);
 }
 
 /*
-#include <stdio.h>
-#include <string.h>
-int main(void)
+int	main(void)
 {
-    char tab[] = "";
-    char tabb[] = "Kk";
+	char tab[] = "hola";
+	char tabb[] = "adios";
+	char *p;
 
-    memcpy(tab, tabb, 4);
-    puts(tab);
-    return (0);
+	p = ft_strjoin(tab, tabb);
+	printf("%s",p);
+	free(p);
 }*/
