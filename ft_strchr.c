@@ -3,39 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 15:54:27 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/26 09:07:09 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:52:59 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
-{
-	char	*ptr;
-
-	ptr = (char *)s;
-	while (*ptr != c)
+{	
+	while (*s != '\0')
 	{
-		if (*ptr == '\0')
-			return (0);
-		ptr++;
+		if ((unsigned char)*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-	return (ptr);
+	if ((unsigned char)c == 0)
+		return ((char *)s);
+	return (0);
 }
-
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    char buff[10] = "holaaa";
-    int     c = 97;
-    void    *p;
-
-    p = ft_strchr(buff, c);
-    printf("%p", p);
-
-}*/
