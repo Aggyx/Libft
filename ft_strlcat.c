@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 14:45:21 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 15:31:00 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/09/29 15:27:42 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	*dst = 0;
 	return (j + i);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char first[] = "This is ";
-    char last[] = "a potentially long string";
-	int r;
-
-    r = strlcat(first,last,9);
-
-    puts(first);
-    printf("Value returned: %d\n",r);
-    return(0);
-}*/
