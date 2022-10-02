@@ -6,70 +6,55 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 11:11:13 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/28 12:21:49 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/02 23:16:13 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbrlen(long long n)
+static int	ft_digit_count(long long int i)
 {
-	size_t	i;
+	int	count;
 
-	i = 1;
-	if (n < 0)
+	count = 0;
+	if (i < 0)
 	{
-		n *= -1;
-		i++;
+		i *= -1;
+		count++;
 	}
-	while (n > 9)
+	while (i > 0)
 	{
-		n /= 10;
-		i++;
+		i /= 10;
+		count++;
 	}
-	return (i);
-}
-
-char	*ft_boucle(char *x, unsigned int number, long int len)
-{
-	while (number > 0)
-	{
-		x[len--] = 48 + (number % 10);
-		number = number / 10;
-	}
-	return (x);
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	unsigned int		num;
-	long	int			k;
-	char				*str;
-	
-	num = 1;
-	k = ft_nbrlen(n) + 1;
-	str = (char *)malloc(sizeof(char) * k);
+	char			*str;
+	long long int	k;
+	int				i;
+
+	k = (long long int)n;
+	i = ft_digit_count(k);
+	str = malloc((1 + i) * sizeof(char));
 	if (!(str))
 		return (0);
+	str[i--] = '\0';
 	if (n == 0)
-		str[0] = '0';
-	if (n < 0)
 	{
-		num = n * -1;
-		str[0] = '-';
+		str = ft_calloc(2, sizeof(char));
+		str[0] = 48;
 	}
-	else
-		num = n;
-	ft_boucle(str, num, k);
-	str[k] = '\0';
+	if (k < 0)
+		str[0] = '-';
+	if (k < 0)
+		k = k * -1;
+	while (k > 0)
+	{
+		str[i--] = k % 10 + '0';
+		k = k / 10;
+	}
 	return (str);
-}
-
-int	main(void)
-{
-	char	*str;
-
-	str = ft_itoa(100);
-	printf("%s", str);
-	free(str);
 }

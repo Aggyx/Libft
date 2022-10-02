@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/02 21:57:00 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/02 18:26:58 by smagniny          #+#    #+#             */
+/*   Updated: 2022/10/02 18:39:54 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
-{
-	int	index;
+void	ft_putstr_fd(char *s, int fd)
+{	
+	int	i;
 
-	index = 0;
-	if (!(str))
-		return (0);
-	while (str[index])
-	{
-		index++;
-	}
-	return (index);
+	i = 0;
+	while (s[i])
+		write(fd, &s[i++], 1);
 }

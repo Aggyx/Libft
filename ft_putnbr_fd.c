@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/02 21:57:00 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/02 18:34:08 by smagniny          #+#    #+#             */
+/*   Updated: 2022/10/02 18:48:50 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	int	index;
-
-	index = 0;
-	if (!(str))
-		return (0);
-	while (str[index])
+	if ((nb >= -2147483648) && (nb <= 2147483647))
 	{
-		index++;
+		if (nb == -2147483648)
+		{
+			ft_putchar_fd('-', fd);
+			ft_putchar_fd('2', fd);
+			nb = 147483648;
+		}	
+		if (nb < 0)
+		{
+			nb *= -1;
+			ft_putchar_fd('-', fd);
+		}
+		if (nb >= 10)
+		{
+			ft_putnbr_fd(nb / 10, fd);
+			ft_putnbr_fd(nb % 10, fd);
+		}
+		else
+			ft_putchar_fd(nb + 48, fd);
 	}
-	return (index);
 }
