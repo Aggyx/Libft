@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 16:17:09 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/27 16:01:19 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:24:27 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ char	*ft_strrchr(const char *s, int c)
 		ret = &((char *)s)[i];
 	return (ret);
 }
-/*
+
 #include <stdio.h>
 
 int main(void)
 {
     char buff[10] = "aaaaloo";
     int     c = 97;
-    void    *p;
+    char    *p;
 
     p = ft_strrchr(buff, c);
-    printf("%p", p);
+    printf("%s", p);
 
-}*/
+}

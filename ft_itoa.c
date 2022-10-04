@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 11:11:13 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/02 23:16:13 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:08:08 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,18 @@ char	*ft_itoa(int n)
 	int				i;
 
 	k = (long long int)n;
+	if (k == 0)
+		return (ft_strdup("0"));
 	i = ft_digit_count(k);
-	str = malloc((1 + i) * sizeof(char));
+	str = (char *)malloc((i + 1) * sizeof(char));
 	if (!(str))
 		return (0);
 	str[i--] = '\0';
-	if (n == 0)
+	if (k < 0)
 	{
-		str = ft_calloc(2, sizeof(char));
-		str[0] = 48;
-	}
-	if (k < 0)
 		str[0] = '-';
-	if (k < 0)
 		k = k * -1;
+	}
 	while (k > 0)
 	{
 		str[i--] = k % 10 + '0';

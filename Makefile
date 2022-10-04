@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+         #
+#    By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 13:33:25 by smagniny          #+#    #+#              #
-#    Updated: 2022/10/03 13:12:58 by smagniny         ###   ########.fr        #
+#    Updated: 2022/10/04 12:58:07 by smagniny         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ clean:
 	@${ERASE} ${OBJS}
 fclean:
 	@${ERASE} ${OBJS} ${NAME}
-bonus:
-	@ar rcs $(NAME) $(OBJS_B)
+
 re: fclean all
 

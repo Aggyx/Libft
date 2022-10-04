@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/23 13:22:55 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/04 17:59:49 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,12 @@ int	ft_atoi(const char *str)
 		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
+	{
 		if (str[i++] == '-')
+			return (NULL);
+		if (str[i] == '-')
 			sign = -1;
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = nb * 10 + (str[i] - '0');
