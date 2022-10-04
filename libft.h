@@ -6,7 +6,7 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:54:35 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/02 21:55:12 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/03 13:06:55 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 void	ft_putstr_fd(char *s, int fd);
+typedef struct s_list
+{
+void	*content;
+struct s_list *next;
+}	t_list;
 #endif
