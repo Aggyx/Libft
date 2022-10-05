@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+         #
+#    By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 13:33:25 by smagniny          #+#    #+#              #
-#    Updated: 2022/10/04 12:58:07 by smagniny         ###   ########.fr        #
+#    Updated: 2022/10/05 11:41:49 by smagniny         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS = ${SRCS:.c=.o}
 SRCS_B = ft_lstnew.c
 OBJS_B = ${SRCS_B:.c=.o}
 NAME = libft.a
-COMP = gcc -Wall -Wextra -Werror
+COMP = gcc
 ERASE = rm -rf
 INCLUDE = libft.h
 
@@ -31,3 +31,6 @@ fclean:
 
 re: fclean all
 
+so:
+	gcc -nostartfiles -fPIC -Wall -Werror -Wextra $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
