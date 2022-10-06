@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/05 15:39:46 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/05 17:44:07 by smagniny          #+#    #+#             */
+/*   Updated: 2022/10/05 18:04:59 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
-	long int		nb;
-	int				sign;
+	size_t	i;
+	t_list	*ptr;
 
-	sign = 1;
-	nb = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\f'
-		|| *str == '\r' || *str == '\n' || *str == '\v')
-		str++;
-	if (*str == '+' || *str == '-')
+	i = 0;
+	ptr = lst;
+	while (ptr)
 	{
-		if (*(str + 1) == '-' || *(str + 1) == '+')
-			return (0);
-		if (*str == '-')
-			sign = -1;
-		str++;
+		ptr = ptr->next;
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = nb * 10 + (*str - '0');
-		str++;
-	}
-	return ((int)(sign * nb));
+	return (i);
 }

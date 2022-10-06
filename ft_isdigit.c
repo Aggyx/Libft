@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:31:30 by smagniny          #+#    #+#             */
-/*   Updated: 2022/09/22 12:20:47 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:30:26 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
-s
-int	main()
-{
-	char tab[] = "112hola";
-	printf("%d", ft_str_is_alpha(tab));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:06:33 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/05 11:58:21 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:38:28 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *dst, const char *str, size_t len)
 
 	j = 0;
 	i = 0;
-	if (!*str || !len)
+	if (!*str)
 		return ((char *)dst);
 	while (dst[i])
 	{
