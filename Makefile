@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+         #
+#    By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 13:33:25 by smagniny          #+#    #+#              #
-#    Updated: 2022/10/05 18:38:56 by smagniny         ###   ########.fr        #
+#    Updated: 2022/10/06 18:11:04 by smagniny         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,20 +16,23 @@ OBJS = ${SRCS:.c=.o}
 SRCS_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstclear.c ft_lstdelone.c
 OBJS_B = ${SRCS_B:.c=.o}
 NAME = libft.a
-COMP = gcc
+COMP = gcc -Wall -Werror -Wextra
 ERASE = rm -rf
 INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS) ${INCLUDE}
-	@ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS) libft.h
 clean:
-	@${ERASE} ${OBJS}
+	@${ERASE} ${OBJS} ${OBJS_B}
 fclean:
-	@${ERASE} ${OBJS} ${NAME}
+	@${ERASE} ${OBJS} ${OBJS_B} ${NAME}
 
 re: fclean all
+
+bonus: 
+	make SRCS='$(SRCS) $(SRCS_B)'
 
 so:
 	gcc -nostartfiles -fPIC -Wall -Werror -Wextra $(SRCS)
