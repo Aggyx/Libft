@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:06:33 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/05 15:38:28 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:44:10 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strnstr(const char *dst, const char *str, size_t len)
 
 	j = 0;
 	i = 0;
-	if (!*str)
+	if (str[0] == '\0')
 		return ((char *)dst);
-	while (dst[i])
+	while (len && dst[i])
 	{
 		j = 0;
 		while (dst[i] == str[j] && dst[i] && i < len)
@@ -33,5 +33,5 @@ char	*ft_strnstr(const char *dst, const char *str, size_t len)
 			return ((char *)&dst[i - j]);
 		i = (i - j) + 1;
 	}
-	return (NULL);
+	return (0);
 }

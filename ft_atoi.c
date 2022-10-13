@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/05 15:39:46 by smagniny         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:48:35 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	long int		nb;
-	int				sign;
+	unsigned int		nb;
+	int					sign;
 
 	sign = 1;
 	nb = 0;
@@ -24,16 +24,18 @@ int	ft_atoi(const char *str)
 		str++;
 	if (*str == '+' || *str == '-')
 	{
-		if (*(str + 1) == '-' || *(str + 1) == '+')
-			return (0);
 		if (*str == '-')
 			sign = -1;
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		nb = nb * 10 + (*str - '0');
+		nb = (nb * 10) + (*str - '0');
 		str++;
 	}
-	return ((int)(sign * nb));
+	if (nb > 2147483647 && sign == 1)
+		return (-1);
+	else if (nb > 2147483648 && sign == -1)
+		return (0);
+	return ((sign * nb));
 }
