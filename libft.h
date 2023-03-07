@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:54:35 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/13 14:58:59 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/03/05 10:32:16 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-
+/*FT_PRINTF*/
+# include <stdarg.h>
+/*GNL*/
+# include <limits.h>
 typedef struct s_list
 {
 	void			*content;
@@ -45,7 +48,6 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 char	*ft_strdup(const char *s1);
-void	*ft_calloc(size_t count, size_t size);
 int		ft_atoi(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -67,4 +69,31 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*FT_PRINTF*/
+
+int		ft_putchar(char c);
+int		ft_putnbr(int nb);
+int		ft_putstr(char *s);
+int		ft_itoalcount(int n);
+int		ft_utoa(unsigned long k);
+int		ft_putnbrbase(unsigned long int nbr, char *base, int *rtn);
+int		ft_printf_char(char c);
+int		ft_printf_int(int num);
+int		ft_printf_str(char *str);
+int		ft_printf_unsigned(unsigned int num);
+int		ft_printf(const char *str, ...);
+
+/*GNL*/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+# ifndef FD_INDEX
+#  define FD_INDEX FOPEN_MAX
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strjoinfree(char *oldbuffer, char *tempbuffer);
+int		find_occurrence(const char *s, int c);
+char	*ft_calloc(size_t count, size_t size);
 #endif

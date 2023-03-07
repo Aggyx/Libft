@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 13:05:34 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/05 12:42:10 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/17 11:41:12 by smagniny          #+#    #+#             */
+/*   Updated: 2022/12/12 18:20:23 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_printf_char(char c)
 {
-	t_list	*ptr;
-
-	ptr = (t_list *)malloc(sizeof(t_list));
-	if (!(ptr))
-		return (NULL);
-	ptr->content = (void *)content;
-	ptr->next = NULL;
-	return (ptr);
+	return (write(1, &c, 1));
 }

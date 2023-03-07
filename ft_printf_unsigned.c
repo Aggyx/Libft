@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:25:26 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/06 19:22:23 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/19 22:34:45 by smagniny          #+#    #+#             */
+/*   Updated: 2022/12/12 18:20:37 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{	
-	t_list	*ptr;
+int	ft_printf_unsigned(unsigned int num)
+{
+	int		rtn;
 
-	if (*lst)
-	{
-		while ((*lst)->next)
-		{
-			ptr = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = ptr;
-		}
-	}
+	rtn = 0;
+	if (num == 0)
+		rtn += ft_putchar('0');
+	else
+		rtn += ft_utoa(num);
+	return (rtn);
 }

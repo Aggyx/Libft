@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printf_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:46:30 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/13 16:55:49 by smagniny         ###   ########.fr       */
+/*   Created: 2022/10/17 11:41:12 by smagniny          #+#    #+#             */
+/*   Updated: 2022/12/12 18:20:29 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_printf_int(int num)
 {
-	void	*ptr;
+	int		rtn;
 
-	if (size * count < count && size * count < size)
-		return (0);
-	ptr = malloc(size * count);
-	if (!ptr)
-		return (0);
+	rtn = 0;
+	if (num == 0)
+		rtn += write(1, "0", 1);
 	else
-		return (ft_memset(ptr, 0, size * count));
+		rtn += ft_itoalcount(num);
+	return (rtn);
 }
