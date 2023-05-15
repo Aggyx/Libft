@@ -6,7 +6,7 @@
 #    By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/21 13:33:25 by smagniny          #+#    #+#              #
-#    Updated: 2023/05/15 17:27:01 by smagniny         ###   ########.fr        #
+#    Updated: 2023/05/15 18:09:14 by smagniny         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_split.c 
 		ft_openfd.c \
 		ft_mat.c \
 		doublefree.c \
+		ft_isspace.c
 
 OBJS = ${SRCS:.c=.o}
 

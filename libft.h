@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:54:35 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/15 17:38:12 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:08:42 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,15 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
 //openfd
 int		openfd(char *fname);
 int		maxx(int a, int b);
 int		my_abs(int x);
-int		ft_lendb(void **tmp);
+int		ft_lendb(char **tmp);
 void	doublefree(char	**tmp);
 int		ft_isdigit_base(char c, int base);
 int		ft_atoi_base(const char *str, int base);
-
+int		ft_isspace(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
