@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/13 16:48:35 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:35:49 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,42 @@ int	ft_atoi(const char *str)
 	else if (nb > 2147483648 && sign == -1)
 		return (0);
 	return ((sign * nb));
+}
+
+int	ft_isdigit_base(char c, int base)
+{
+	const char	*digits = "0123456789ABCDEF";
+	int			i;
+
+	i = 0;
+	while (i < base)
+	{
+		if (digits[i] == ft_toupper(c))
+			return (i);
+		i++;
+	}
+	return (NULL);
+}
+
+int	ft_atoi_base(const char *str, int base)
+{
+	unsigned long	result;
+	size_t			i;
+	int				sign;
+
+	result = 0;
+	i = 0;
+	sign = 1;
+	while (ft_isspace(str[i]))
+		i++;
+	while ((str[i] == '-' || str[i] == '+'))
+	{
+		if (sign == -1 && str[i++] == '-')
+			sign = 1;
+		if (str[i] == '-')
+			sign = -1;
+	}
+	while (ft_isdigit_base(str[i], base) >= 0)
+		result = result * base + ft_isdigit_base(str[i++], base);
+	return ((int)(result * sign));
 }

@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_openfd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/15 17:25:05 by smagniny         ###   ########.fr       */
+/*   Created: 2023/05/15 17:17:44 by smagniny          #+#    #+#             */
+/*   Updated: 2023/05/15 17:18:01 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+int	openfd(char *fname)
 {
-	int	index;
+	int	f;
 
-	index = 0;
-	while (str[index])
-		index++;
-	return (index);
-}
-
-int	ft_lendb(void **tmp)
-{
-	int	i;
-
-	i = 0;
-	if (tmp[i])
-	{
-		while (tmp[i])
-			i++;
-	}
-	return (i);
+	f = open(fname, O_RDONLY);
+	if (f == -1)
+		panic("FdF: Invalid file\n");
+	return (f);
 }
