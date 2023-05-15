@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/15 17:42:43 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:13:42 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_isdigit_base(char c, int base)
 			return (i);
 		i++;
 	}
-	return (NULL);
+	return (-1);
 }
 
 int	ft_atoi_base(const char *str, int base)
