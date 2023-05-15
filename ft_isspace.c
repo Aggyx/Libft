@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/15 17:55:31 by smagniny         ###   ########.fr       */
+/*   Created: 2023/05/15 17:56:46 by smagniny          #+#    #+#             */
+/*   Updated: 2023/05/15 17:57:51 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+#include <stdbool.h>
+
+int	ft_isspace(int c)
 {
-	int	index;
-
-	index = 0;
-	while (str[index])
-		index++;
-	return (index);
-}
-
-int	ft_lendb(char **tmp)
-{
-	int	i;
-
-	i = 0;
-	if (tmp[i])
-	{
-		while (tmp[i])
-			i++;
-	}
-	return (i);
+	return (c == ' ' || c == '\t' || c == '\n' \
+		|| c == '\v' || c == '\f' || c == '\r');
 }
