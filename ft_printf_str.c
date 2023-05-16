@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:41:12 by smagniny          #+#    #+#             */
-/*   Updated: 2022/12/12 18:26:20 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:01:00 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
-}
-
-int	ft_strlen(const char *str)
-{
-	int	index;
-
-	index = 0;
-	while (str[index])
-		index++;
-	return (index);
 }
 
 int	ft_putstr(char *s)
