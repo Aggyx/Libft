@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:15:19 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/15 18:13:42 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:36:37 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	ft_atoi(const char *str)
 		nb = (nb * 10) + (*str - '0');
 		str++;
 	}
-	if (nb > 2147483647 && sign == 1)
-		return (-1);
-	else if (nb > 2147483648 && sign == -1)
-		return (0);
+	if (nb >= 2147483647 && sign == 1)
+		return (False);
+	else if (nb >= 2147483648 && sign == -1)
+		return (False);
 	return ((sign * nb));
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:54:35 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/16 13:26:14 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:33:10 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@
 # include <limits.h>
 // ft_openfd
 # include <fcntl.h>
+
+typedef enum t_boolean
+{
+	False,
+	True
+}	t_bool;
 
 typedef struct s_list
 {
