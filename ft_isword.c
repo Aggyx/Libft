@@ -6,13 +6,13 @@
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:09:22 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/17 15:15:23 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/06/13 18:08:59 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isword(const char *string, const char *substring)
+int	ft_isword(const char *string, const char *substring)
 {
 	size_t	string_len;
 	size_t	substring_len;
