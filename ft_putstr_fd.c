@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smagniny <smagniny@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 18:26:58 by smagniny          #+#    #+#             */
-/*   Updated: 2022/10/17 11:24:51 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/06/17 14:10:08 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_putstr_fd(char *s, int fd)
 	if (!s || !fd)
 		return ;
 	while (s[i])
-		write(fd, &s[i++], 1);
+		write(fd, &s[i++], fd);
 }
