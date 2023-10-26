@@ -6,7 +6,7 @@
 /*   By: smagniny <smagniny@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:53:36 by smagniny          #+#    #+#             */
-/*   Updated: 2023/05/16 15:05:46 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:20:12 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ int	ft_strlen(const char *str)
 	int	index;
 
 	index = 0;
-	while (str[index])
-		index++;
+	if (*str && str)
+	{
+		while (str[index])
+			index++;
+	}
 	return (index);
 }
 
