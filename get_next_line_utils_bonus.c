@@ -6,13 +6,13 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 22:58:21 by smagniny          #+#    #+#             */
-/*   Updated: 2023/03/06 12:17:03 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:11:25 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoinfree(char *oldbuffer, char *tempbuffer)
+char	*ft_strjoinfrees1(char *oldbuffer, char *tempbuffer)
 {
 	char	*new_str;
 	int		i;

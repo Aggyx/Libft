@@ -6,7 +6,7 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:44:29 by smagniny          #+#    #+#             */
-/*   Updated: 2023/03/05 10:31:19 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:12:36 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*readalot(int fd, char *buffer)
 			break ;
 		}
 		tmpbuffer[bytecount] = 0;
-		buffer = ft_strjoinfree(buffer, tmpbuffer);
+		buffer = ft_strjoinfrees1(buffer, tmpbuffer);
 		if (find_occurrence(tmpbuffer, '\n'))
 			break ;
 	}

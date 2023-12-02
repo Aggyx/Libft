@@ -6,7 +6,7 @@
 /*   By: smagniny <santi.mag777@student.42madrid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:54:35 by smagniny          #+#    #+#             */
-/*   Updated: 2023/06/01 16:33:10 by smagniny         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:49:30 by smagniny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 //openfd
+char** copy_2d_array(const char** original);
 int		openfd(char *fname);
 int		maxx(int a, int b);
 int		my_abs(int x);
@@ -69,6 +70,7 @@ char	*ft_strdup(const char *s1);
 int		ft_atoi(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoinfrees2(char const *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
@@ -111,7 +113,7 @@ int		ft_printf(const char *str, ...);
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoinfree(char *oldbuffer, char *tempbuffer);
+char	*ft_strjoinfrees1(char *oldbuffer, char *tempbuffer);
 int		find_occurrence(const char *s, int c);
 char	*ft_calloc(size_t count, size_t size);
 #endif
