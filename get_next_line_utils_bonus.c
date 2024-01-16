@@ -19,16 +19,16 @@ char	*ft_strjoinfrees1(char *oldbuffer, char *tempbuffer)
 	int		j;
 
 	new_str = (char *)malloc(ft_strlen(oldbuffer) + ft_strlen(tempbuffer) + 1);
-	if (!oldbuffer || !tempbuffer || !(new_str))
+	if (!new_str || (!oldbuffer && !tempbuffer))
 		return (0);
 	i = 0;
-	while (oldbuffer[i] != '\0')
+	while (oldbuffer && oldbuffer[i] && oldbuffer[i] != '\0')
 	{
 		new_str[i] = oldbuffer[i];
 		i++;
 	}
 	j = 0;
-	while (tempbuffer[j] != '\0')
+	while (tempbuffer && tempbuffer[j] && tempbuffer[j] != '\0')
 		new_str[i++] = tempbuffer[j++];
 	new_str[i] = '\0';
 	free(oldbuffer);

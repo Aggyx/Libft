@@ -16,7 +16,7 @@ int	ft_strlen(const char *str)
 {
 	int	index;
 
-	if (str == NULL)
+	if (str == NULL || str[0] == '\0')
 		return (0);
 	index = 0;
 	while (str[index])
